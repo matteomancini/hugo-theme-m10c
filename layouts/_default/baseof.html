@@ -31,6 +31,16 @@
         {{- end }}
       </nav>
       {{- end }}
+      <nav class="app-header-menu">
+        {{ $first_item := true }}
+        {{ range where .Site.RegularPages "Type" "page" }}
+          {{ if ne $first_item true }}
+            {{ $.Site.Params.menu_item_separator | default " - " | safeHTML }}
+          {{ end }}
+          {{ $first_item = false }}
+          <a class="app-header-menu-item" href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ end }}
+      </nav>
       <p>{{ .Site.Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium." }}</p>
       <p><div class="question">Who am I</div> {{ .Site.Params.whoami | default " " }}</p>
       <div class="app-header-social">
