@@ -17,6 +17,20 @@ h1, h2, h3, h4, h5, h6 {
   color: $lightest-color;
 }
 
+.title {
+  margin-bottom: 0;
+}
+
+.author {
+  margin-top: 0;
+  color: $primary-color;
+}
+
+.question {
+  font-weight: bold;
+  color: $primary-color;
+}
+
 a {
   color: $primary-color;
   transition: color 0.35s;
