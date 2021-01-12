@@ -25,6 +25,14 @@
       </div>
       {{- end }}
     </header>
+    {{ if .Params.image }}
+      <figure>
+        <img class="post-pic" src="{{ .Params.image | absURL }}">
+        {{ if .Params.caption }}
+          <figcaption>{{ .Params.caption | markdownify}}</figcaption>
+        {{ end }}
+        </figure>
+    {{ end }}
     <div class="post-content">
       {{ .Content }}
     </div>

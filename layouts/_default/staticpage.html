@@ -3,6 +3,14 @@
     <header class="post-header">
       <a name="post"><h1 class ="post-title">{{ .Title }}</h1></a>
     </header>
+    {{ if .Params.image }}
+      <figure>
+        <img class="post-pic" src="{{ .Params.image | absURL }}">
+        {{ if .Params.caption }}
+          <figcaption>{{ .Params.caption }}</figcaption>
+        {{ end }}
+        </figure>
+    {{ end }}
     <div class="post-content">
       {{ .Content }}
     </div>

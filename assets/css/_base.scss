@@ -31,6 +31,21 @@ h1, h2, h3, h4, h5, h6 {
   color: $primary-color;
 }
 
+.post-pic {
+  margin-top: 30px;
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  font-style: italic;
+}
+
+summary {
+  font-size: larger;
+  font-weight: bold;
+}
+
 a {
   color: $primary-color;
   transition: color 0.35s;
