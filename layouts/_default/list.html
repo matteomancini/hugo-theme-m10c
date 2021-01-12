@@ -2,7 +2,11 @@
   <article>
     <h1>Posts</h1>
     <ul class="posts-list">
-      {{ range (.Paginate ( where .Site.RegularPages "Type" "posts" )).Pages }}
+      {{ $pages := .Pages }}
+      {{ if .IsHome }}
+        {{ $pages = where .Site.RegularPages "Type" "posts" }}
+      {{ end }}
+      {{ range (.Paginate $pages).Pages }}
         <li class="posts-list-item">
           <a class="posts-list-item-title" href="{{ .Permalink }}#post">{{ .Title }}</a>
           <span class="posts-list-item-description">
